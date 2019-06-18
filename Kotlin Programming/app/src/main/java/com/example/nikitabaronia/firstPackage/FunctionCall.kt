@@ -1,7 +1,9 @@
-package com.example.nikitabaronia.helloworld
+package com.example.nikitabaronia.firstPackage
 
-fun main(array: Array<String>){
-    var myString : String //declaring as String
+import secondPackage.displayName
+
+fun main(array: Array<String>) {
+    var myString: String //declaring as String
 
     myString = "Hi this is function calling tutorial"
 
@@ -22,30 +24,36 @@ fun main(array: Array<String>){
     println("Hi I am called from main method " + displayNameObj.name)
 
     // $ is an identifier which will extract values from class var
+
+    //make sure you use curly brackets else it will print hashValue of class
     println("Hi I am called inside brackets ${displayNameObj.name}")
+
+    //create obj of a class from another package
+    var obj2 = displayName("Hi passing value to cons")
+    obj2.display()
 
 }
 
 //create a function to print name
-fun printName(name:String){ // syntax is {{varName : dataType }}
+fun printName(name: String) { // syntax is {{varName : dataType }}
     println(name)
 }
 
 //declare a class and create a method inside it
-class display{
+class display {
 
     //declare function
-    fun displayName(name:String){
-        println("Hi I am inside a class "   + name)
+    fun displayName(name: String) {
+        println("Hi I am inside a class " + name)
     }
 }
 
 //declare a class and create a method inside it
-class displayNameWithoutVar{
+class displayNameWithoutVar {
 
-    var name :String = ""
+    var name: String = ""
     //declare function
-    fun displayName(){
-        println("Hi I am inside a class" +name)
+    fun displayName() {
+        println("Hi I am inside a class" + name)
     }
 }
